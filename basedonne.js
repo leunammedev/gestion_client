@@ -10,12 +10,3 @@ function afficherDate()
 }
 setInterval(afficherDate, 1000);
 
-// function dateheure(){
-//     var d = new Date();
-// var date = d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
-// var hours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-// var fullDate = date+' / '+hours;
-// document.getElementById('date').innerHTML = fullDate;
-// }
-// setInterval(dateheure, 1000);
-
