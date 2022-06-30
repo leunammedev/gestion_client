@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==
+    "crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="basedonne.css"/>
+    <title>base-donne</title>
+</head>
+<body>
+   <main>
+    <!-- en tete contenant la date et l'heure avec le profil du user -->
+    <div class="menu-bar">
+        <div class="container-date-hours">
+            <span id="date"> | </span>
+        </div>
+        <!-- image du profil -->
+        <div id="myBtn" class="container-profil">
+            <img src="images/carte.png" alt="">
+        </div>
+    </div>
+    <div class="container-row">
+        <div  class="container-search-select">
+            <div class="container-icons-search">
+                <input type="search" for="icons-search" placeholder="Rechercher sur le site…" onkeyup="filter(event)">
+             <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <select name="" id="">
+                <option value="">Sexe</option>
+                <option value="">F</option>
+                <option value="">M</option>
+            </select>
+        </div>
+        <!-- bouton ajouter et supprimer -->
+        <div>
+            <div>
+                <button class="ajouter-btn" id="mybtn" >+ Ajouter</button>
+                <button class="supprimer-btn" onclick="selectElement()">Supprimer</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div>
+        <table cellspacing = 0 >
+            <thead class="headerbold">
+               
+                <!-- <tr> -->
+                    <th>check</th>
+                    <th>id</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Adresse Email</th>
+                    <th>Phone</th>
+                    <th>Sexe</th>
+                    <th>Actions</th>
+                <!-- </tr> -->
+            </thead>
+            <tbody id="users-container"></tbody>
+        </table>
+    </div>
+    <!-- MODAL Profil-->
+    <div id="myModal" class="modal">
+        <div class='modal-content'>
+            <!-- fermerture du modal profil -->
+                        <span class="close"> 
+                        <i class="fa-solid fa-xmark"></i>
+                        </span>
+            <!-- <p> </p> -->
+            <div class="profil-modal">
+                <img src="images/modp.jpg" alt="">
+            </div>
+           <div class="container-formulaire">
+               <form action="" class="formulaire">
+                   <div class="container-fullname">
+                        <div>
+                            <div><label for="" class="label-none">Nom</label></div>
+                            <input type="text" placeholder="KPOKUI"> 
+                        </div>
+                        <div>
+                            <div> <label for="">Prénom </label> </div>
+                            <input type="text" placeholder="Manou">
+                        </div>
+                   </div>
+                    <div>
+                        <div> <label for="">E-mail</label> </div>
+                        <input type="text" placeholder="manou@gmail.com">
+                    </div>
+                    <div>
+                        <div><label for="">mot de passe actuel</label></div>
+                        <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxx">
+                    </div>
+                    <div>
+                        <div><label for="">Nouveau mot de passe</label></div>
+                        <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxx">
+                    </div>
+                    <div>
+                        <div><label for="">Confirmation</label></div>
+                        <input type="text" placeholder="xxxxxxxxxxxxxxxxxxxx">
+                    </div>
+                    <button class="btn-annuler form-btn">Annuler</button>
+                    <button class="btn-sauvegarder form-btn">Sauvegarder</button>
+               </form>
+           </div>
+
+        </div>
+    </div>
+    <!-- modal ajout d'un utilisateur -->
+    <div class="modal-containt">
+        <div class="modaltwo" id="modalAjout">
+            <form action="" class="containerUser" onsubmit="event.preventDefault()">
+                <div class="fermer"> 
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+               <div class="flex">
+                <div class="input"><input type="text" id="nom" placeholder="entrez votre nom" class="input-ajout" autofocus required></div>
+                <div class="input"><input type="text" id="prenom" placeholder="entrez votre prenom" class="input-ajout" autofocus required>
+                </div>
+               </div>
+                <div class="input"><input type="date" id="dateDeNaissance" placeholder="entrez votre date de naissance" class="input-ajout"
+                        autofocus required>
+                </div>
+                <br>
+                <div class="input"><input type="email" id="email" placeholder="entrez votre email" class="input-ajout" autofocus required></div>
+                <div class="input"><input type="tel" id="phone" placeholder="entrez votre numero de telephone" class="input-ajout" autofocus
+                        required>
+                </div>
+                <div class="">
+                    <select name="" id="sexe" class="input-ajout">
+                        <option value="">selectionner le sexe</option>
+                        <option value="H">Homme</option>
+                        <option value="F">Femme</option>
+                    </select>
+                </div>
+                <div class="buttonn">
+                    <button class="btn-sauvegarder form-btn"  onclick="addUser()">Sauvegarder</button>
+                    <!-- <button class="btn-annuler form-btn">Annuler</button> -->
+                </div>
+            </form>
+        </div>
+        
+
+    </div>
+</div>
+   </main>
+</body>
+<script src="basedonne.js"></script>
+<script src="modal.js"></script>
+<script src="modaluser.js"></script>
+<script src="recovery.js"></script>
+<script src="delete.js"></script>
+</html>
+
+ 
+
+
+
